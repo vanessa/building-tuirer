@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-# ✔️ Checkpoint:
-# Criar uma função da API que você selecionou
-# na primeira aula para retornar como a resposta.
+from core.helpers import get_character_name, ip_info
+from datetime import datetime
 
 def index(request):
-    return HttpResponse('Olá')
+    context = {
+        'now': datetime.now()
+    }
+    return render(request, 'home.html', context)

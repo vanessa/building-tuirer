@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <title>Tuirer</title>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <h2>Tuirer</h2>
+        <p>
+            {% block body %}
+            Hello.
+            {% endblock %}
+        </p>
+        <footer>
+            {% block footer %}Este é meu footer{% endblock %}
+        </footer>
+    </body>
+</html>
