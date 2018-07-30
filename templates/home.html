@@ -3,7 +3,7 @@
 {% block body %}
     {% for tuite in tuites %}
         <div>
-            {{ tuite.author.pk }}: {{ tuite.content }}
+            {{ tuite.author }}: {{ tuite.content }}
         </div>
     {% endfor %}
 {% endblock %}

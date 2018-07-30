@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'core',
     'tuites',
     'users',
+
+    # 3rd party
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +87,7 @@ DATABASES = {
 
 # Users
 AUTH_USER_MODEL = 'users.User'
+LOGIN_URL = 'index'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

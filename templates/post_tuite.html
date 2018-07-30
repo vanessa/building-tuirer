@@ -1,15 +1,30 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block body %}
-    {% if error %}
-        <p class="error">{{ error }}</p>
+
+    {% if form.errors %}
+        {% for error in form.non_field_errors %}
+            <p class="error">{{ error }}</p>
+        {% endfor %}
     {% endif %}
-    {% if success_message %}
-        <p class="message">{{ success_message }}</p>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <p class="message">{{ message }}</p>
+        {% endfor %}
     {% endif %}
+    
     <form method="post">
         {% csrf_token %}
-        <input name="content" placeholder="O que você está pensando?" />
+        {% for field in form %}
+            {% if not field.name == 'author' %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {% endif %}
+            {% render_field field class="post-tuite-field" placeholder=field.label autofocus=True %}
+            <p style="font-size: .8em; color: #666;">{{ field.help_text }}</p>
+            {{ field.errors }}
+        {% endfor %}
         <input type="submit" value="Postar Tuite">
     </form>
 {% endblock %}
