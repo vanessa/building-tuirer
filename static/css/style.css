@@ -187,3 +187,14 @@ input[type="submit"]:hover {
 .post-tuite-container input[type="text"] {
     outline: 2px solid deepskyblue;
 }
+
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    background: gray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}

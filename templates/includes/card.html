@@ -2,11 +2,11 @@
     <p class="content">{{ tuite.content }}</p>
     <hr>
     <div class="author-and-likes">
-        <a href="#" onClick="alert('Cenas dos próximos capítulos');" class="author"> <!-- Adiciona link para o perfil do usuário -->
+        <a href="{% url 'profile' tuite.author.pk %}" class="author"> <!-- Adiciona link para o perfil do usuário -->
             <div class="author-avatar" style="background-image: url('{{ tuite.author.picture.url }}');"></div>
             {{ tuite.author }} 
         </a>
-        <div class="likes" onClick="alert('Cenas dos próximos capítulos');">
+        <div class="likes">
             <i class="far fa-heart"></i>
             0
         </div>
