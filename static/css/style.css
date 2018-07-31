@@ -12,13 +12,176 @@ body {
 }
 
 .message {
-    padding: 5px;
+    padding: 5px 10px;
     margin: 10px 0;
-    background: limegreen;
-    color: #333;
+    background: cornflowerblue;
+    color: #fff;
     font-size: .8em;
+    border-radius: 3px;
+}
+
+.tuirer-container {
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: deepskyblue;
+}
+
+nav h1 {
+    font-family: serif;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.15);
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav, .tuites-home {
+    padding: 0 300px;
+    margin: 0 auto;
+}
+
+input[type="submit"] {
+    background: #a1a1a1;
+    padding: 5px 15px; 
+    font-size: 1.1em;
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    background: #8a8a8a;
 }
 
 .post-tuite-field {
+    padding: 5px 10px;
+    font-size: 1.2em;
+    font-family: inherit;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card {
+    background: #fafafa;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 3px;
+    margin-bottom: 10px;
+    transition: all .1s ease-in-out;
+}
+
+.card > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+}
+
+.card p {
+    margin: 0 0 5px;
+}
+
+.card hr {
     border: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.card .content {
+    padding: 5px 0;
+    font-family: serif;
+}
+
+.card .author {
+    font-size: .8em;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.card .author:hover {
+    text-decoration: underline;
+}
+
+.card .author .author-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.card .author-and-likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .author-and-likes .likes {
+    font-size: .85em;
+    color: palevioletred;
+}
+
+.site-hero {
+    padding: 20px 300px;
+    min-height: 200px;
+    background-image: url('../img/tuiting.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column nowrap;
+    font-size: 1.2em;
+    color: #fff;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.site-hero h2 {
+    margin: 0 0 5px;
+}
+
+.site-hero .overlay {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+}
+
+.site-hero .content {
+    z-index: 2;
+}
+
+.post-tuite-container {
+    width: 800px;
+    margin: 15px auto;
+}
+
+.post-tuite-container input {
+    width: 100%;
+}
+
+.post-tuite-container input[type="text"] {
+    outline: 2px solid deepskyblue;
 }

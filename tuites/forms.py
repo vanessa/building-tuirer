@@ -12,7 +12,7 @@ class PostTuiteForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['author'].initial = self.initial['user'].id
         self.fields['author'].widget = forms.HiddenInput()
-        self.fields['content'].help_text='Digite o que você está pensando'
+        self.fields['content'].label = 'O que você está pensando?'
 
     def clean(self):
         cleaned_data = super().clean()

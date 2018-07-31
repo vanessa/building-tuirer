@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    {% for tuite in tuites %}
-        <div>
-            {{ tuite.author }}: {{ tuite.content }}
+    <div class="site-hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>O que você está pensando?</h2>
+            <p>Tuite para seus amigos.</p>
         </div>
-    {% endfor %}
+    </div>
+    <div class="tuites-home">
+        {% for tuite in tuites %}
+            {% include 'includes/card.html' %}
+        {% endfor %}
+    </div>
 {% endblock %}

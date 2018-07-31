@@ -6,15 +6,12 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
     <body>
-        <h2>Tuirer</h2>
-        {% include 'includes/menu.html' %}
-        <p>
+        <div class="tuirer-container">
+            {% include 'includes/menu.html' %}
             {% block body %}
             Hello.
             {% endblock %}
-        </p>
-        <footer>
-            {% block footer %}Este é meu footer{% endblock %}
-        </footer>
+        </div>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </body>
 </html>
