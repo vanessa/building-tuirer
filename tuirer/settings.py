@@ -88,6 +88,8 @@ DATABASES = {
 # Users
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = 'index'
+LOGIN_REDIRECT_URL = 'tuites:post_tuite'
+LOGOUT_REDIRECT_URL = 'index'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

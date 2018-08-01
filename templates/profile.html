@@ -6,7 +6,7 @@
     style="background-image: url('{{ profile.picture.url }}');"
     ></div>
     {% if profile == request.user %}
-        <a href="{% url 'profile-edit' request.user.pk %}">Editar perfil</a>
+        <a href="{% url 'users:profile-edit' request.user.pk %}">Editar perfil</a>
     {% endif %}
 
     <h2>{{ profile.username }}</h2>
