@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from core.views import index
 from tuites.views import PostTuiteView
@@ -11,8 +11,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('postar/', PostTuiteView.as_view(), name='post_tuite'),
-    path('perfil/<int:pk>/', ProfileView.as_view(), name='profile'),
-    path('perfil/<int:pk>/editar/', ProfileEditView.as_view(), name='profile-edit'),
+    
+    path('', include('users.urls')),
 ]
 
 if settings.DEBUG:

@@ -5,9 +5,9 @@
     class="profile-picture"
     style="background-image: url('{{ profile.picture.url }}');"
     ></div>
-    {% if profile == request.user %}
-        <a href="{% url 'profile-edit' request.user.pk %}">Editar perfil</a>
-    {% endif %}
+    {% if profile == user %}
+        <a href="{% url 'users:edit_profile' user.pk %}">Editar perfil</a>
+    {% endif %} 
 
     <h2>{{ profile.username }}</h2>
 

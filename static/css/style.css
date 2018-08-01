@@ -198,3 +198,8 @@ input[type="submit"]:hover {
     background-repeat: no-repeat;
     border-radius: 50%;
 }
+
+.date {
+    font-size: .8em;
+    color: #666;
+}
