@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, RedirectView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from tuites.forms import PostTuiteForm
@@ -25,3 +25,18 @@ class PostTuiteView(LoginRequiredMixin, CreateView):
             'Você postou um Tuite!'
         )
         return super().form_valid(form)
+
+
+class LikeTuiteView(RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        from_url = self.request.META.get('HTTP_REFERER')
+        tuite_pk = kwargs.get('pk')
+        user = self.request.user
+
+        tuite = Tuite.objects.get(pk=tuite_pk)
+        user_has_liked = tuite.liked_by.filter(pk=user.pk).exists()
+        if user_has_liked:
+            tuite.liked_by.remove(user)
+        else:
+            tuite.liked_by.add(user)
+        return f'{from_url}#{tuite_pk}'

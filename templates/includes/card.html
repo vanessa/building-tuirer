@@ -1,14 +1,28 @@
-<div class="card">
+{% load tuite_likes %}
+<div class="card" id="{{ tuite.id }}">
     <p class="content">{{ tuite.content }}</p>
+    <p class="likes">
+        Curtido por 
+        {% for user_liked in tuite.liked_by.all %}
+            {{ user_liked }}
+        {% empty %}
+            ninguém
+        {% endfor %}
+    </p>
     <hr>
     <div class="author-and-likes">
         <a href="{% url 'users:profile' tuite.author.pk %}" class="author"> <!-- Adiciona link para o perfil do usuário -->
             <div class="author-avatar" style="background-image: url('{{ tuite.author.picture.url }}');"></div>
             {{ tuite.author }} 
         </a>
+        <div class="date-created">
+            {{ tuite.date_created }}
+        </div>
         <div class="likes">
-            <i class="far fa-heart"></i>
-            0
+            <a href="{% url 'tuites:like' tuite.pk %}">
+                {% tuite_liked_icon %}
+                {{ tuite.likes_count }}
+            </a>
         </div>
     </div>
     </a>

@@ -141,6 +141,21 @@ input[type="submit"]:hover {
     color: palevioletred;
 }
 
+.card .date-created {
+    font-size: .8em;
+    color: gray;
+}
+
+.card .likes {
+    font-size: .7em;
+    color: gray;
+}
+
+.card .likes > a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .site-hero {
     padding: 20px 300px;
     min-height: 200px;

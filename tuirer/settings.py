@@ -87,7 +87,7 @@ DATABASES = {
 
 # Users
 AUTH_USER_MODEL = 'users.User'
-LOGIN_URL = 'index'
+LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'tuites:post_tuite'
 LOGOUT_REDIRECT_URL = 'index'
 
