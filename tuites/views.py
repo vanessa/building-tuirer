@@ -33,6 +33,9 @@ class LikeTuiteView(RedirectView):
         tuite_pk = kwargs.get('pk')
         user = self.request.user
 
+        if not user.pk:
+            return from_url
+
         tuite = Tuite.objects.get(pk=tuite_pk)
         user_has_liked = tuite.liked_by.filter(pk=user.pk).exists()
         if user_has_liked:
