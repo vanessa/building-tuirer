@@ -5,6 +5,10 @@ from django.urls import path, include
 
 from core.views import index
 
+# Todas as nossas URLs do projeto estarão aqui.
+# O Django sabe que esse é o arquivo principal
+# de URLs por causa de uma variável nos arquivos
+# de configuração chamada `ROOT_URLCONF`.
 
 urlpatterns = [
     path('admin/', admin.site.urls),
